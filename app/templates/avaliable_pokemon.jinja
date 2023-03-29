@@ -1,0 +1,52 @@
+{% extends "base.jinja" %}
+
+{% block content %}
+<div class="masthead"
+  style="background-image: url('../static/images/find_pok.jpeg');">
+  <div class="color-overlay d-flex justify-content-center alighn-items-center"><h1>Catch Your Pokemon</h1>
+  </div>
+   <div class="find">
+        <form action="" method="POST">
+      {{  form.hidden_tag() }}
+      <p>
+      {{ form.pokemon_name.label  }}<br>
+      {{ form.pokemon_name(size=32)  }}
+      <p> {{form.submit(class='btn btn-primary') }}</p>
+      {% for error in form.pokemon_name.errors %}
+      <span>{{ error }}</span>
+      
+      {%  endfor %}
+      </p>
+    </div>
+</div>
+
+
+
+
+{# {% for p in my_pokemon%}
+<div class="card" style="width: 18rem;">
+  <img src='#' class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Name</h5>
+    <p class="card-text"> ID</p>
+    <p class="card-text"> Ability</p>
+    <p class="card-text">Type</p>
+    <a href="#" class="btn btn-primary">Pick this pokemon</a>
+  </div>
+</div>
+
+{% endfor %} #}
+    {# <form action="" method="POST">
+    {{  form.hidden_tag() }}
+    <p>
+    {{ form.pokemon_name.label  }}<br>
+    {{ form.pokemon_name(size=32)  }}
+    <p> {{form.submit(class='btn btn-primary') }}</p>
+    {% for error in form.pokemon_name.errors %}
+    <span>{{ error }}</span>
+    
+    {%  endfor %}
+    </p> #}
+
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.jinja" %}
+
+{% block content %}
+  <div class="container mt-1 p-3 mb-2 bg-primary-subtle text-emphasis-primary">
+  <h2>Login</h2>
+      <form action="{{ url_for('auth.log_in') }}" method="post">
+        {{  log_in_form.hidden_tag() }}
+        <p>
+        {{ log_in_form.username.label }}<br>
+        {{ log_in_form.username(size=32) }}
+        </p>
+        <p>
+        {{ log_in_form.password.label }}<br>
+        {{ log_in_form.password(size=32) }}
+        </p>
+        <p>{{ log_in_form.remember_me() }} {{ log_in_form.remember_me.label }}</p>
+        <p>
+        {{ log_in_form.submit(class='btn btn-primary') }}
+        </p>
+      </form>
+  </div>
+{% endblock %}

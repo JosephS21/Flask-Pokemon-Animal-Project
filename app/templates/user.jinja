@@ -1,0 +1,25 @@
+{% extends "base.jinja" %}
+
+{% block content %}
+<div class="container">
+<h2 class="wel">Welcome to {{ user.username }}'s Collection</h2>
+
+{% for p in pokemons %}
+    <p class="p">{{ user.username }} has:</p>
+    <div class="card" style="width: 18rem;">
+  <img src='{{ p.sprite }}' class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{ p.pokemon_name }}</h5>
+    <p class="card-text"> {{ p.id }}</p>
+    <p class="card-text"> {{p.ability}}</p>
+    <p class="card-text">{{p.type}}</p>
+    <form>
+    <button class="btn btn-primary">Remove this Pokemon</button>
+    <input type="hidden" name="id" value="{{ p.id }}">
+    </form>
+  </div>
+</div>
+    {# <p>{{ post.author.username }} says: {{ post.body }}</p> #}
+</div>
+{% endfor %} 
+{% endblock %}

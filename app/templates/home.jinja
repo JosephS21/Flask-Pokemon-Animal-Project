@@ -1,0 +1,20 @@
+{% extends "base.jinja" %}
+
+{% block content %}
+
+<div class="container mt-1">
+<img src="../static/images/allpokemon.jpeg" class="img-fluid" alt="Ash and a lot of pokemons">
+<h4 class="fw-light"> Welcome! A community dedicated to show our love for pokemons. Once registered and logged in, you have access to see unique pokemons still avaliable, meet likeminded people with similar intrests, 
+not only capturing but being creative by creating rare pokemons and giving a chance for others to see and capture! You will be able too blog about your experince in the community or even about
+the collection you have. Everyone will be able to see eachother's collections once inside the community, come quick while and build your profile with your very own collection! </h4>
+
+<a href="{{ url_for('auth.register')}}" class="btn btn-info btn-lg">Join Community</a>
+
+</div>
+
+
+
+
+
+{% endblock %}
+
